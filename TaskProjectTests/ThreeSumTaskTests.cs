@@ -14,11 +14,8 @@ namespace TaskProject.Tests
         [TestMethod]
         public void test_empty()
         {
-            int[] nums = new int[] { 1, 0, -1 };
-            IList<IList<int>> expected = new List<IList<int>>()
-            {
-                new List<int>(){ -1,-0,1 }
-            };
+            int[] nums = new int[] { };
+            IList<IList<int>> expected = new List<IList<int>>();
             // Act
             IList<IList<int>> actual = new ThreeSumTask().ThreeSum(nums);
 
@@ -35,10 +32,10 @@ namespace TaskProject.Tests
         [TestMethod]
         public void test_zero()
         {
-            int[] nums = new int[] { 1, 0 };
+            int[] nums = new int[] { 0, 0,0 };
             IList<IList<int>> expected = new List<IList<int>>()
             {
-                new List<int>(){ -1,-0,1 }
+                new List<int>(){ 0,0,0 }
             };
             // Act
             IList<IList<int>> actual = new ThreeSumTask().ThreeSum(nums);
