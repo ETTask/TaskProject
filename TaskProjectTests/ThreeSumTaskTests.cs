@@ -12,6 +12,64 @@ namespace TaskProject.Tests
     public class ThreeSumTaskTests
     {
         [TestMethod]
+        public void test_empty()
+        {
+            int[] nums = new int[] { 1, 0, -1 };
+            IList<IList<int>> expected = new List<IList<int>>()
+            {
+                new List<int>(){ -1,-0,1 }
+            };
+            // Act
+            IList<IList<int>> actual = new ThreeSumTask().ThreeSum(nums);
+
+
+            // Assert
+            Assert.AreEqual(expected.Count, actual.Count);
+
+            for (int i = 0; i < expected.Count; i++)
+            {
+                CollectionAssert.AreEqual(expected[i].ToList(), actual[i].ToList());
+            }
+        }
+
+        [TestMethod]
+        public void test_zero()
+        {
+            int[] nums = new int[] { 1, 0 };
+            IList<IList<int>> expected = new List<IList<int>>()
+            {
+                new List<int>(){ -1,-0,1 }
+            };
+            // Act
+            IList<IList<int>> actual = new ThreeSumTask().ThreeSum(nums);
+
+
+            // Assert
+            Assert.AreEqual(expected.Count, actual.Count);
+
+            for (int i = 0; i < expected.Count; i++)
+            {
+                CollectionAssert.AreEqual(expected[i].ToList(), actual[i].ToList());
+            }
+        }
+
+        [TestMethod]
+        public void test_1_0_m1()
+        {
+            // Arrange
+            int[] nums = new int[] { 1, 0, -1 };
+            IList<IList<int>> expected = new List<IList<int>>()
+            {
+                new List<int>(){ -1,-0,1 }
+            };
+            // Act
+            IList<IList<int>> actual = new ThreeSumTask().ThreeSum(nums);
+
+
+            // Assert
+            Assert.AreEqual(expected.Count, actual.Count);
+        }
+        [TestMethod]
         public void test_m2_m1_0_3()
         {   
             // Arrange
@@ -26,11 +84,6 @@ namespace TaskProject.Tests
 
             // Assert
             Assert.AreEqual(expected.Count, actual.Count);
-
-            for (int i = 0; i < expected.Count; i++)
-            {
-                CollectionAssert.AreEqual(expected[i].ToList(), actual[i].ToList());
-            }
         }
         [TestMethod]
         public void test_m1_m2_0_3()
@@ -47,11 +100,6 @@ namespace TaskProject.Tests
 
             // Assert
             Assert.AreEqual(expected.Count, actual.Count);
-
-            for (int i = 0; i < expected.Count; i++)
-            {
-                CollectionAssert.AreEqual(expected[i].ToList(), actual[i].ToList());
-            }
         }
 
 
@@ -70,11 +118,6 @@ namespace TaskProject.Tests
 
             // Assert
             Assert.AreEqual(expected.Count, actual.Count);
-
-            for (int i = 0; i < expected.Count; i++)
-            {
-                CollectionAssert.AreEqual(expected[i].ToList(), actual[i].ToList());
-            }
         }
     }
 }
